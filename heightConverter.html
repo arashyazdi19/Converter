@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h1>Converter</h1>
+      <p>
+         <label>Feet</label>
+         <input id="inputFeet" type="number" placeholder="Feet"
+            oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+      </p>
+      <p>Cm: <span id="outputMeters"></span></p>
+
+      <p>
+         <label>Inches</label>
+         <input id="inputInches" type="number" placeholder="Inches"
+            oninput="cmConverter(this.value)" onchange="cmConverter(this.value)">
+      </p>
+
+      <p>Cm: <span id="outputInches"></span></p>
+
+      <script>
+         /* Converts value from feet to meters */
+         function lengthConverter(valNum) {
+           document.getElementById("outputMeters").innerHTML = valNum * 30.48;
+         }
+
+         function cmConverter(val) {
+            document.getElementById("outputInches").innerHTML = val * 2.54;
+         }
+      </script>
+   </body>
+</html>
